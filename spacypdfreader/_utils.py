@@ -29,13 +29,9 @@ def _filter_doc_by_page(doc: Doc, page_number: str) -> Span:
             break
 
     for idx, token in enumerate(doc):
-        if idx == len(doc) - 1:
+        if idx == len(doc) - 1 or token._.page_number > page_number:
             end_idx = idx
             break
-        elif token._.page_number > page_number:
-            end_idx = idx
-            break
-
     return doc[start_idx:end_idx]
 
 
