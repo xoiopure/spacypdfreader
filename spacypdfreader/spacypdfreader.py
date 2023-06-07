@@ -162,7 +162,7 @@ def pdf_reader(
     if verbose:
         console.print("Converting text to [blue bold]spaCy[/] Doc...")
 
-    docs = [doc for doc in nlp.pipe(texts)]
+    docs = list(nlp.pipe(texts))
     for idx, doc in enumerate(docs):
         page_num = idx + 1
         for token in doc:

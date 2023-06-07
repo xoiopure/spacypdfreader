@@ -57,8 +57,7 @@ def parser(pdf_path: str, page_number: int, **kwargs):
     # pdfminer uses zero indexed page numbers. Therefore need to remove 1
     # from the page count.
     page_number -= 1
-    text = extract_text(pdf_path, page_numbers=[page_number], **kwargs)
-    return text
+    return extract_text(pdf_path, page_numbers=[page_number], **kwargs)
 
 
 class PdfminerParser:
